@@ -1,0 +1,14 @@
+<h1><%= @movie.title %> </h1>
+
+<dl>
+  <% if @movie.release_year < Date.today.year %>
+    <dd>  <p><strong> Ano de lançamento: </strong> <%=@movie.release_year %></p> </dd>
+  <% else %>
+    <dd> <strong> Filme em produção </strong> </dd>
+  <% end %>
+  <dd>  <p><strong> Sinopse: </strong> <%=@movie.synopsis %></p> </dd>
+  <dd>  <p><strong> País de origem: </strong> <%=@movie.country_of_origin %></p> </dd>
+  <dd>  <p><strong> Duração em minutos: </strong> <%=@movie.duration %></p> </dd>
+  <dd>  <p><strong> Diretor: </strong> <%=@movie.director.name %></p> </dd>
+  <dd>  <p><strong> Gênero: </strong> <%=@movie.genre.name %></p> </dd>
+</dl>

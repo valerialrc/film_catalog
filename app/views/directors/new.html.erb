@@ -1,0 +1,33 @@
+<h1> Cadastro de Diretores </h1>
+
+<% if flash[:notice] %>
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= form_with model: @director do | f | %>
+  <div>
+    <%= f.label :name, 'Nome' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :nationality, 'Nacionalidade' %>
+    <%= f.text_field :nationality %>
+  </div>
+
+  <div>
+    <%= f.label :birth_date, 'Data de Nascimento' %>
+    <%= f.date_field :birth_date %>
+  </div>
+
+  <div>
+    <%= f.label :genre_id, 'Gênero favorito' %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.submit 'Salvar' %>
+  </div>
+<% end %>

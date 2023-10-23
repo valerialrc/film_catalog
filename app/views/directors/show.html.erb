@@ -1,0 +1,10 @@
+<h1>Filme dirigidos por <%= @director.name %> </h1>
+
+<% @director.movies.each do |movie| %>
+  <nav>
+    <ul>
+      <li>  <%= link_to movie.title, movie %> </li>
+      
+    </ul>
+  </nav>
+<% end %>
